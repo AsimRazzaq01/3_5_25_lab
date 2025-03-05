@@ -13,8 +13,8 @@ fun Nav(modifier: Modifier) {
         composable(route = "MainScreen") {
             MainScreen(navController, modifier)
         }
-        composable(route="DetailsScreen/{data}") {
-            val param = it.arguments?.getString("data")
+        composable(route="DetailsScreen/{name}") {
+            val param = it.arguments?.getString("name")
             if (param != null) {
                 DetailsScreen(navController, param, modifier)
             }

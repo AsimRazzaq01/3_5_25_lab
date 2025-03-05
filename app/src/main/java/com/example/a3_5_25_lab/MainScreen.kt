@@ -17,10 +17,11 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 
 @Composable
-fun MainScreen(navController: NavController, modifier: Modifier =Modifier) {
+fun MainScreen(navController: NavController, modifier: Modifier = Modifier) {
     var nameList = mutableListOf("Mateo", "Ali", "Zara", "Naomi")
     var context = LocalContext.current
-    LazyColumn(modifier.clickable { navController.navigate("DetailsScreen") }) {
+    // .clickable { navController.navigate("DetailsScreen")
+    LazyColumn(modifier) {
         item {
             Text(text = "Main Screen" , fontSize = 30.sp)
         }
@@ -30,9 +31,8 @@ fun MainScreen(navController: NavController, modifier: Modifier =Modifier) {
                     .fillMaxSize()
                     .clickable {
                         // Click event handler code goes here...
-                        navController.navigate("DetailsScreen")
+                        navController.navigate("DetailsScreen/$currentItem")
                         Toast.makeText(context, currentItem, Toast.LENGTH_SHORT).show()
-
                     }
             ) {
                 Column {

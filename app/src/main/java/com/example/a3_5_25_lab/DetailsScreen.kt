@@ -21,7 +21,7 @@ fun DetailsScreen(navController: NavHostController,name: String, modifier: Modif
         }
         item{
             Button(onClick={
-                navController.popBackStack()
+                navController.navigate("MainScreen")
             })
             {
                 Text("Go back to main screen")
